@@ -1,0 +1,19 @@
+{
+  "name": "krakenmovie-js",
+  "version": "1.0.0",
+  "description": "App to Search movies",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SufranjNaweed/KrakenMovie-JS.git"
+  },
+  "author": "Naweed SUFRANJ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SufranjNaweed/KrakenMovie-JS/issues"
+  },
+  "homepage": "https://github.com/SufranjNaweed/KrakenMovie-JS#readme"
+}
