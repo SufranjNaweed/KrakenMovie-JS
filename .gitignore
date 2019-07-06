@@ -59,3 +59,8 @@ typings/
 
 # next.js build output
 .next
+
+# useless css
+public/scss/*.css.map
+public/scss/*/*.css
+public/scss/*/*.css.map
