@@ -1,0 +1,30 @@
+@keyframes breathing{
+    0%{
+        box-shadow: 0 0 0 5px $blueLight;
+    }
+    25%{
+        box-shadow: 0 0 0 10px $blueLight;
+    }
+    50%{
+        box-shadow: 0 0 0 15px $blueLight;
+    }
+    75%{
+        box-shadow: 0 0 0 10px $blueLight;
+    }
+    100%{
+        box-shadow: 0 0 0 8px $blueLight;
+    }
+}
+
+
+@keyframes focus {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
