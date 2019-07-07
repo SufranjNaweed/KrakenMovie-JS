@@ -1,6 +1,81 @@
-h1{
-    color: $green;
+*{
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
 }
+
+h1, h2, h3, h4{
+    font-family: 'Oswald', sans-serif;
+}
+
+h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+h2{
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+body{
+    background: $white;
+}
+
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    color: #fff;
+    a{
+        transition: all linear 0.4s;
+        &:hover{
+            background-color: $marineBlueLight;
+        }
+    }
+    nav{
+        display: flex;
+        height: 45px;
+        align-items: center;
+        background-color: $marineBlue;
+        div{
+            width: 30%;
+            a{
+                padding: 10px;
+                font-family: 'Oswald', sans-serif;
+                color: #fff;
+                text-decoration: unset;
+                text-transform: uppercase;
+                span{
+                    
+                    font-size: 20px;
+                    letter-spacing: 3px;
+                }
+
+            }
+        }
+        ul{
+            width: 70%;
+            display: flex;
+            justify-content: flex-end;
+            a{
+                color: #fff;
+                text-decoration: none;
+                padding: 10px;
+                font-size: 20px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
 
 .container{
     max-width: 1180px;
@@ -9,4 +84,40 @@ h1{
     @media screen and (min-width: 1400px){
         max-width: 1300px;
     }
+}
+
+
+#home{
+    min-height: 100vh;
+    position: relative;
+    background-image: url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center; 
+
+    .overlay-home{
+        background: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.5;
+        filter: blur(4px);
+    }
+
+
+    .title{
+        position: absolute;
+        top: 40%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        color: $white;
+        .dot{
+            font-size: 50px;
+            color: $blueHeavy;
+        }
+    }
+
 }
