@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
     /// Generate Template 
     function templateResult(data){
         const overview = data.overview.substr(0, 350) + '...';
-        const temlate = `    
+        const template = `    
         <a href="/movie-details/${data.id}">
             <div class="card">
                 <div class="left">
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
         </a>
         `;
 
-        return temlate;
+        return template;
     }
 
     /// Display Results
@@ -85,7 +85,4 @@ document.addEventListener("DOMContentLoaded", function() {
     inputContainer.addEventListener('blur', function() {
         inputSearch.value.length != 0 ? inputContainer.classList.add('focus') : inputContainer.classList.remove('focus');
     });
-
-
-
 });
