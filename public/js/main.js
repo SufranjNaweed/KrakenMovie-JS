@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const query = `${API_URL}${API_KEY}&query=${inputSearch.value}?&language=fr-FR`;
         axios.get(query)
         .then((res)=>{
-            console.log(res)
             displayResults(res.data.results);
         })
         .catch((error)=>{console.log(error)})
@@ -37,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     /// Display Results
     function displayResults(results){
-        console.log(results);
         modalResults.innerHTML = '';
         for(let result of results){
             let movieDiv =  document.createElement('div');
@@ -53,8 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Data
     const data    =  document.querySelector("#data");
-    console.log(API_KEY, API_URL);
-
+    
     // inputs & modal
     const btnSearch     = document.querySelector('#searchBtn');
     let inputContainer  = document.querySelector('.search-form');
