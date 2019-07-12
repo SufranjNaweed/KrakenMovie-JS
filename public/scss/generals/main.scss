@@ -78,7 +78,7 @@ header{
 
 
 .container{
-    margin: 50px 0;
+    margin-top: 45px;
     max-width: 1180px;
     margin-right: auto;
     margin-left: auto;
@@ -86,6 +86,11 @@ header{
         max-width: 1300px;
     }
 }
+
+.text-center{
+    text-align: center;
+}
+
 
 
 #home{
@@ -106,7 +111,6 @@ header{
         filter: blur(4px);
     }
 
-
     .title{
         position: absolute;
         top: 40%;
@@ -120,5 +124,74 @@ header{
             color: $blueHeavy;
         }
     }
+}
 
+#movie-details{
+    position: relative;
+    min-height: 100vh;
+    .bg-poster{
+        position: relative;
+        min-height: 80vh;
+        background-position: top center;
+        background-size: cover;
+        .overlay{
+            background: black;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.5;
+            filter: blur(4px);
+        }
+    }
+    .card{
+        background: $white;
+        z-index: 10;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        .container{
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        h2{
+            text-align: center;
+            letter-spacing: 1px;
+            font-weight: $fBold;
+            font-size: 42px;
+        }
+        .genre{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 10px 0;
+            @media screen and (min-width: $smScreen){
+                flex-direction: row;
+            }
+            .chips{
+                width: 125px;
+                margin: 5px auto;
+                padding:  5px 10px;
+                border-radius: 20px;
+                text-align: center;
+                font-size: 12px;
+                background-color: $blue;
+                color: #fff;
+                text-transform: uppercase;
+                font-weight: $fSemiBold;
+                @media screen and (min-width: $smScreen){
+                    margin: 0 10px;
+                    width: 150px;
+                    font-size: 16px;
+                }
+            }
+        }
+        p{
+            font-size: 24px;
+        }
+    }
 }
