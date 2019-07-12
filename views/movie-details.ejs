@@ -1,7 +1,29 @@
 <% include  partials/head %>
 
-<div class="container">
-    <h2><%= title %></h2>
-</div>
+<section id="movie-details">
+    
+    <div class="bg-poster" style="background-image: url('<%= data.backgroundPoster %>');">
+       
+        <div class="overlay"></div>
+    </div>
+    
+    <div class="card">
+        <div class="container">
+            <h2><%= data.title %> <%= data.release_date %></h2>
+            <p class="text-center">Production Budget : <%= data.budget %> $</p>
+            <div class="genre">
+                <% for(var i=0; i<data.genres.length; i++) { %>
+                    <span class="chips"><%= data.genres[i].name %></span> 
+                <% } %>
+            </div>
+            <p> <%= data.overview %> </p>
+        </div>
+    </div>
+        
+
+
+    
+</section>
+
 
 <% include  partials/footer %>
