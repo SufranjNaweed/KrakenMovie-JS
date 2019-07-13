@@ -7,7 +7,7 @@ const app = express();
 const dotenv = require('dotenv').config();
 const axios =  require('axios');
 
-const port = 9000;
+const port = process.env.PORT || 9000;
 
 ///////////////////
 //  Template
