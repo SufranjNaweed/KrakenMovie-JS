@@ -18,20 +18,6 @@
     }
 }
   
-.search-form:before {
-    /*
-    content: ' ';
-    position: absolute;
-    left: 25px;
-    top: 14px;
-    width: 2px;
-    height: 36px;
-    transform: scale(0);
-    z-index: 1;
-    //background: rgb(71, 136, 135);
-    transition: all 0.5s cubic-bezier(.87, -.41, .19, 1.44);
-    */
-}
 
 .active:before {
     transform: scale(1);
