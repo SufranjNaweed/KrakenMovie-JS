@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     /// Search
     function search(){
-        const query = `${API_URL}${API_KEY}&query=${inputSearch.value}?&language=fr-FR`;
+        const query = `${API_URL}${API_KEY}&query=${inputSearch.value}`;
         axios.get(query)
         .then((res)=>{
             displayResults(res.data.results);
@@ -49,15 +49,18 @@ document.addEventListener("DOMContentLoaded", function() {
         inputSearch.value = "";
     }
 
+
     // Data
-    const data    =  document.querySelector("#data");
+    var data    =  document.querySelector("#data");
     
     // inputs & modal
-    const btnSearch     = document.querySelector('#searchBtn');
-    let inputContainer  = document.querySelector('.search-form');
-    let inputSearch     = document.querySelector('#search');
-    let modalResults    = document.querySelector('#modalResults');
-    const overlayResults = document.querySelector('.overlay-results');
+    var btnSearch       = document.querySelector('#searchBtn');
+    var inputContainer  = document.querySelector('.search-form');
+    var inputSearch     = document.querySelector('#search');
+    var modalResults    = document.querySelector('#modalResults');
+    var overlayResults  = document.querySelector('.overlay-results');
+    
+
 
     // Events
     btnSearch.addEventListener('click', function(e){
@@ -67,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
             search();
         }
     });
+
 
     overlayResults.addEventListener('click', function(e){
         e.preventDefault();
@@ -82,4 +86,26 @@ document.addEventListener("DOMContentLoaded", function() {
     inputContainer.addEventListener('blur', function() {
         inputSearch.value.length != 0 ? inputContainer.classList.add('focus') : inputContainer.classList.remove('focus');
     });
+
+
+
 });
+
+
+function showTrailer(){
+    modalTrailer.style.display = "block";
+}
+function hideTrailer(){
+    modalTrailer.style.display = "none";  
+    
+    trailerScr          = trailer.src;
+    trailer.src          = trailerScr ;
+}
+var playTrailer     = document.querySelector("#playTrailer");
+var modalTrailer    = document.querySelector('#modal-trailer');
+var overlayTrailer  = document.querySelector('.overlayTrailer');
+var trailer         = document.querySelector('#trailer');
+
+
+playTrailer.addEventListener('click', showTrailer);
+overlayTrailer.addEventListener('click', hideTrailer)
