@@ -3,26 +3,68 @@
 <section id="movie-details">
     
     <div class="bg-poster" style="background-image: url('<%= data.backgroundPoster %>');">
-       
         <div class="overlay"></div>
+        <div class="head-info">
+            <h1><%= data.title %> <%= data.release_date %></h1>
+            <span id="playTrailer">
+                <svg width="50px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" role="img" viewBox="0 0 448 512"><path fill="#fff" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path></svg>
+                Play the trailer
+            </span>
+        </div>
     </div>
     
     <div class="card">
         <div class="container">
             <h2><%= data.title %> <%= data.release_date %></h2>
-            <p class="text-center">Production Budget : <%= data.budget %> $</p>
+            <h3 class="text-center">Recette : <%= data.revenue %> $</h3>
+            <h3 class="text-center">Production Budget : <%= data.budget %> $</h3>
+            <h3>Movie Duration : <%= data.duration %> H</h3>
+            <h3>Genres</h3>
             <div class="genre">
                 <% for(var i=0; i<data.genres.length; i++) { %>
                     <span class="chips"><%= data.genres[i].name %></span> 
                 <% } %>
             </div>
-            <p> <%= data.overview %> </p>
+            <div>
+                <h3>Synopsis</h3>
+                <p><%= data.overview %></p>
+            </div>          
+            <div class="companies">
+                <span><strong>production companies : </strong></span>
+                <% for(var i=0; i<data.productionCompanies.length; i++) { %>
+                    <span>      
+                        <%= data.productionCompanies[i].name %>
+                    </span>
+                <% } %>
+            </div>
+            <div class="countries">
+                <span><strong>production countries : </strong> </span>
+                <% for(var i=0; i<data.productionCountries.length; i++) { %>
+                    <span>      
+                        <%= data.productionCountries[i].name %>
+                    </span>
+                <% } %>
+            </div>
+            <div>
+                <p>Movie's official website : <a href="<%= data.homepage %>"><%= data.homepage %></a></p>
+            </div>
         </div>
     </div>
-        
+    <div class="small-footer">
+        <div class="container">
+            <div class="made"><a href="https://www.naweed-sufranj.fr/">Made By Naweed SUFRANJ</a></div>
+            <div class="thanks"><a href="https://www.themoviedb.org/">Thanks To The Movie DB API</a></div>
+        </div>
+    </div>
+
+    <div id="modal-trailer">
+        <div class="overlayTrailer"></div>
+        <div class="modal">
+            <iframe id="trailer" width="100%" height="500px" src="https://www.youtube.com/embed/<%= data.trailer %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
 
 
-    
 </section>
 
 
