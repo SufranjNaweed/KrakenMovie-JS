@@ -24,7 +24,7 @@ app.use('/public', express.static('public'));
 ///////////
 
 app.get('/', (req, res) => {
-    res.render("index", {api_key : dotenv.parsed.API_KEY, api_url : dotenv.parsed.API_URL});
+    res.render("index", {api_key : process.env.API_KEY, api_url : process.env.API_URL});
 });
 
 app.get('/movie-details/:id', (req, res) => {
@@ -48,7 +48,7 @@ app.get('/movie-details/:id', (req, res) => {
 });
 
 const requestMovie = (id) => {
-    const query = `https://api.themoviedb.org/3/movie/${id}?api_key=${dotenv.parsed.API_KEY}`;
+    const query = `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.API_KEY}`;
 
     return  axios.get(query)
                 .then((res) => {
@@ -61,7 +61,7 @@ const requestMovie = (id) => {
 }
 
 const requestTrailer = (id) => {
-    const queryTrailer = `http://api.themoviedb.org/3/movie/${id}/videos?api_key=${dotenv.parsed.API_KEY}`;
+    const queryTrailer = `http://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.API_KEY}`;
     const key = axios.get(queryTrailer).then((res) => {
         return(res.data.results[0].key);
     }).catch((err) => {
