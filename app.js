@@ -7,7 +7,7 @@ const app = express();
 const dotenv = require('dotenv').config();
 const axios =  require('axios');
 
-const PORT = process.env.PORT || 9000;
+const port = process.env.PORT || 9000;
 const HOST = '0.0.0.0';
 
 ///////////////////
@@ -153,5 +153,5 @@ const getDateYear = (date) => {
 //////////////////////
 //  LISTEN - PORT
 //////////////////////
-app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+app.listen(port, HOST);
+console.log(`Running on http://${HOST}:${port}`);
