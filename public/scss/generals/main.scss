@@ -4,6 +4,7 @@
     padding: 0;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
+    word-wrap: break-word;
 }
 
 h1, h2, h3, h4{
@@ -19,12 +20,18 @@ h1{
 h2{
     font-size: 30px;
     letter-spacing: 2px;
+    box-sizing: border-box;
+    padding: 5px;
 }
 
 body{
     background: $white;
 }
 
+section{
+    padding-top: 45px;
+    box-sizing: border-box;
+}
 
 header{
     position: fixed;
@@ -45,7 +52,7 @@ header{
         align-items: center;
         background-color: $marineBlue;
         div{
-            width: 30%;
+            width: 60%;
             a{
                 padding: 10px;
                 font-family: 'Oswald', sans-serif;
@@ -54,23 +61,30 @@ header{
                 text-transform: uppercase;
                 span{
                     
-                    font-size: 20px;
+                    font-size: 14px;
                     letter-spacing: 3px;
+
+                    @media screen and (min-width: $mdScreen){
+                        font-size: 20px;
+                    }
                 }
 
             }
         }
         ul{
-            width: 70%;
+            width: 40%;
             display: flex;
             justify-content: flex-end;
             a{
                 color: #fff;
                 text-decoration: none;
                 padding: 10px;
-                font-size: 20px;
+                font-size: 14px;
                 letter-spacing: 1px;
                 text-transform: uppercase;
+                @media screen and (min-width: $mdScreen){
+                    font-size: 20px;
+                }
             }
         }
     }
@@ -244,6 +258,10 @@ header{
             justify-content: space-between;
             margin: 40px 0;
             font-size: 24px;
+            flex-direction: column;
+            @media screen and (min-width: $mdScreen){
+                flex-direction: row;
+            }
             span{
                 strong{
                     font-size: 28px;
