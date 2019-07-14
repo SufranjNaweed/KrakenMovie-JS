@@ -27,6 +27,10 @@ app.get('/', (req, res) => {
     res.render("index", {api_key : process.env.API_KEY, api_url : process.env.API_URL});
 });
 
+app.get('/about', (req, res) => {
+    res.render('about');
+})
+
 app.get('/movie-details/:id', (req, res) => {
     const id =  req.params.id;
     let dataToSend;
@@ -46,6 +50,10 @@ app.get('/movie-details/:id', (req, res) => {
             });
     })
 });
+
+app.get('*', (req, res) => {
+    res.render("404");
+})
 
 const requestMovie = (id) => {
     const query = `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.API_KEY}`;
