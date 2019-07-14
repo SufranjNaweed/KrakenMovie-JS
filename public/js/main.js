@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
                 <div class ="right">
                     <p>${data.title}</p>
-                    <span>Année : ${data.release_date} </span>
+                    <span>Year : ${data.release_date} </span>
                     <p>${overview}</p>
                 </div>
             </div>
