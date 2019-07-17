@@ -4,7 +4,6 @@
 
 const express =  require('express');
 const app = express();
-const dotenv = require('dotenv').config();
 const axios =  require('axios');
 
 const port = process.env.PORT || 9000;
