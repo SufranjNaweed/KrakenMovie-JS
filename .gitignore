@@ -64,3 +64,8 @@ typings/
 public/scss/*.css.map
 public/scss/*/*.css
 public/scss/*/*.css.map
+
+
+#remove IDE file
+.idea
+.idea/*
